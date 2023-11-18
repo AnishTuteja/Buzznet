@@ -43,7 +43,9 @@ function renderPostCard(post) {
         <p>${post.content}</p>
     </blockquote>
     <div class="mt-2 border-secondary border-top d-flex justify-content-around p-2">
-        <button class="btn text-white  text-opacity-75">Likes ${post.likes}
+        <button class="btn text-white text-opacity-75" onclick="likePost(&quot;${
+            post.id
+        }&quot;)">Likes ${post.likes}
             <img src="/images/like.png" alt="" style="height: 25px; width: 25px">
         </button>
         <div class="text-white  text-opacity-75">Comment
@@ -100,5 +102,19 @@ function getTimeSincePost(dateAdded) {
         return `${minutes} minute(s) ago`;
     } else {
         return `${seconds} second(s) ago`;
+    }
+}
+
+async function likePost(postId) {
+    try {
+        const response = await fetch(`/app/${postId}/likePost`);
+        const data = await response.json();
+        if (response.ok) {
+            toastr.success(data.success);
+        } else {
+            throw new Error(data.error);
+        }
+    } catch (err) {
+        toastr.error(err);
     }
 }
