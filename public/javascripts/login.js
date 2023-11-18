@@ -18,7 +18,7 @@ loginForm.addEventListener("submit", async function (event) {
         if (response.ok) {
             const token = data.token;
             document.cookie = `jwtToken=${token}; path=/`;
-            window.location.href = "/app/profile";
+            window.location.href = "/app/feed";
         } else {
             toastr.error(data.error, "Error", { timeOut: 3000 });
         }

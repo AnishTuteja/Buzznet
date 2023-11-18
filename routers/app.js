@@ -5,11 +5,13 @@ const user = require("../controllers/app/user");
 const about = require("../controllers/app/about");
 const getPosts = require("../controllers/app/getPosts");
 const verifyToken = require("../middlewares/verifyToken");
+const getAllPosts = require("../controllers/app/getAllPosts");
 
 router.route("/feed").get(verifyToken, (req, res) => res.render("feed"));
 router.route("/profile").get(verifyToken, (req, res) => res.render("profile"));
 router.route("/user").get(verifyToken, user);
 router.route("/post").post(verifyToken, post).get(verifyToken, getPosts);
 router.route("/about").post(verifyToken, about);
+router.route("/getAllPosts").get(verifyToken, getAllPosts);
 
 module.exports = router;

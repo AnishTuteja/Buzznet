@@ -1,4 +1,3 @@
-x
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +5,79 @@ x
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 </head>
 
-<body>
-    dsfsdf
+<body class="container vh-100 bg-dark">
+    <div class="fs-2 text-white text-center border-bottom p-2 my-2">#Buzznet Explore</div>
+    <div class="d-flex flex-column  align-items-center">
+        <div class="fs-2 text-white  border-bottom p-2 my-2">Create a New Post</div>
+        <div class="p-3 bg-info bg-opacity-25 border border-info rounded my-2 w-75 text-center shadow-lg">
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" style="height: 100px;"
+                    id="newPost"></textarea>
+                <label for="newPost">Whats on your mind ? </label>
+            </div>
+            <button class="btn text-white  fs-6 text-center" onclick="addPost()">BUZZ IT!
+                <img src="/images/share.png" alt="" style="height: 25px; width: 25px">
+            </button>
+        </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center align-items-center" id="placeholder">
+        <div class="card my-2 w-75" aria-hidden="true">
+            <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                    <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                </p>
+                <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+            </div>
+        </div>
+        <div class="card w-75 my-2" aria-hidden="true">
+            <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                    <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                </p>
+                <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+            </div>
+        </div>
+        <div class="card w-75 my-2" aria-hidden="true">
+            <div class="card-body">
+                <h5 class="card-title placeholder-glow">
+                    <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                    <span class="placeholder col-7"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-4"></span>
+                    <span class="placeholder col-6"></span>
+                    <span class="placeholder col-8"></span>
+                </p>
+                <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-column align-items-center" id="posts">
+        <div class="fs-2 text-white  border-bottom p-2 my-2">See what others are up to ?</div>
+    </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="../javascripts/feed.js"></script>
 
 </html>

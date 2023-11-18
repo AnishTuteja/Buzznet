@@ -7,11 +7,7 @@ const SECRET = process.env.SECRET;
 module.exports = async (req, res) => {
     try {
         const { username, password } = req.body;
-        const user = await prisma.user.findUnique({
-            where: {
-                username,
-            },
-        });
+        const user = await prisma.user.findUnique({ where: { username } });
         if (!user) {
             return res.status(401).json({ error: "User not found" });
         }

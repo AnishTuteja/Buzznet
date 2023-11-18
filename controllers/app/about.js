@@ -6,12 +6,8 @@ module.exports = async (req, res) => {
         const userId = req.userId;
         const { about } = req.body;
         await prisma.user.update({
-            where: {
-                id: userId,
-            },
-            data: {
-                about,
-            },
+            where: { id: userId },
+            data: { about },
         });
         res.status(200).json({ success: "About has been updated" });
     } catch (err) {
